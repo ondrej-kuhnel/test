@@ -6,7 +6,6 @@ twig:
     paths:
         '%kernel.project_dir%/../../../tests/TestApplication/templates': ~
 
-# Remove if you do not need to extend entities
 doctrine:
     orm:
         entity_managers:
@@ -17,3 +16,13 @@ doctrine:
                         type: attribute
                         dir: '%kernel.project_dir%/../../../tests/TestApplication/src/Entity'
                         prefix: Tests\Acme\SyliusExamplePlugin
+
+sylius_order:
+    resources:
+        order:
+            classes:
+                model: Tests\Acme\SyliusExamplePlugin\Entity\Order\Order
+
+when@test:
+    framework:
+        test: true
